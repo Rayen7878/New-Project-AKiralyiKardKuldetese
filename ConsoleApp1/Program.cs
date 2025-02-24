@@ -38,7 +38,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine();
             }
-            
+
             string startFelirat = "|START|";
             int konzolSzelesseg = Console.WindowWidth;
             string kozepre = startFelirat.PadLeft((konzolSzelesseg + startFelirat.Length) / 2);
@@ -49,7 +49,7 @@ namespace ConsoleApp1
             Console.Clear();
             goto fomenu;
         //
-                fomenu:
+        fomenu:
             // uj jatek.
             for (int i = 0; i < 3; i++)
             {
@@ -100,33 +100,33 @@ namespace ConsoleApp1
             {
                 Console.WriteLine();
             }
-            
+
             Console.Write("                                                  ||");
-            
+
             string bemenet1 = Console.ReadLine();
 
 
-            if(bemenet1.ToLower()=="új játék" || bemenet1.ToLower()=="uj jatek")
+            if (bemenet1.ToLower() == "új játék" || bemenet1.ToLower() == "uj jatek")
             {
                 goto ujjatek;
-            
+
             }
-            else if(bemenet1.ToLower()=="történet"|| bemenet1.ToLower()=="tortenet")
+            else if (bemenet1.ToLower() == "történet" || bemenet1.ToLower() == "tortenet")
             {
                 goto tortenet;
             }
-            else if(bemenet1.ToLower()=="kilépés" || bemenet1.ToLower()=="kilepes")
+            else if (bemenet1.ToLower() == "kilépés" || bemenet1.ToLower() == "kilepes")
             {
                 Console.Clear();
                 goto vege;
             }
             else
-                {
+            {
                 Console.Clear();
                 goto fomenu;
             }
         //
-             tortenet:
+        tortenet:
             Console.Clear();
 
             string[] jatekTortenet = {
@@ -190,10 +190,10 @@ namespace ConsoleApp1
             Console.WriteLine();
             Console.WriteLine(jatekTortenet[1]);
             Console.WriteLine();
-            
-            
-            
-            
+
+
+
+
 
 
             for (int i = 0; i < 5; i++)
@@ -215,7 +215,7 @@ namespace ConsoleApp1
                 Console.Clear();
                 goto tortenet;
             }
-         ujjatek:
+        ujjatek:
 
             /*
             Játék neve: A Királyi Kard Küldetése
@@ -238,7 +238,7 @@ namespace ConsoleApp1
             Console.Clear();
             int konzolSzelesseg2 = Console.WindowWidth;
             string ujjatekszoveg1 = "Üdvözöllek A királyi kard Küldetésén!";
-            
+
 
             string jatekosNev;
 
@@ -258,18 +258,18 @@ namespace ConsoleApp1
 
             Console.Write("Kérlek add meg a játékos neved: ");
             jatekosNev = Console.ReadLine();
-            
+
             Console.Clear();
 
             for (int i = 0; i < 2; i++)
             {
                 Console.WriteLine();
             }
-           
+
             int balSzovegPozicioujjatek2 = (konzolSzelesseg2 - ujjatekszoveg1.Length) / 2;
             Console.SetCursorPosition(balSzovegPozicioujjatek2, Console.CursorTop);
             Console.WriteLine(ujjatekszoveg1);
-            
+
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine();
@@ -280,7 +280,7 @@ namespace ConsoleApp1
             Console.WriteLine(ujjatekszoveg3);
 
             string ujjatekszoveg2 = $"{jatekosNev} Goldberg édesapja oda adta a királyi kardot hogy megmentse a királynőt.";
-            
+
             for (int i = 0; i < 2; i++)
             {
                 Console.WriteLine();
@@ -296,15 +296,15 @@ namespace ConsoleApp1
                 Console.WriteLine();
             }
             Console.WriteLine($"Isabella királynő útnak indult, hogy meglátogassa a Goldberg Királyságot.\n Azonban egy jól szervezett rajtaütés áldozatává vált, és a szörnyek fogságába esett.\n A támadók valószínűleg a hírhedt északi hegyekbe hurcolták őt.\n{jatekosNev} Goldberg, amint értesült a történtekről, habozás nélkül a nyomukba eredt, hogy kiszabadítsa a királynőt.");
-            
-            
+
+
 
 
             Console.ReadLine();
             Console.Clear();
             goto mainMenu;
 
-         mainMenu:
+        mainMenu:
             /*
             { }
              [
@@ -334,7 +334,7 @@ namespace ConsoleApp1
             */
             int[] jatekosStatja = { 300, 50 };
             double[] jatekosKardSebzes = { 0, 0 };
-            string[] jatekosHatitaska = {"Királyi Kard","Királyi Páncél"," "};
+            string[] jatekosHatitaska = { "Királyi Kard", "Királyi Páncél", " " };
             int jatekosExpLVL = 1;
             int jatekosExp = 0;
             int jatekosPenztarca = 1000;
@@ -431,21 +431,23 @@ namespace ConsoleApp1
             Console.WriteLine();
             Console.WriteLine($"Tapasztalati szint:{jatekosExpLVL}.");
             Console.WriteLine($"Pénztárca:{jatekosPenztarca} arany érem.");
-            
-            Console.WriteLine("|Bolt|  |Játék folytatás|  |Menü|");
-            Console.Write("      ::");
+
+            Console.WriteLine("|Bolt| | |Játék folytatás| | |Menü|");
+            Console.Write($"    {jatekosNev}:");
             string mainmenu1 = Console.ReadLine();  // bolt|fojatek|menu
 
-            if(mainmenu1.ToLower()=="bolt") {
+            if (mainmenu1.ToLower() == "bolt")
+            {
                 Console.Clear();
                 goto bolt;
 
             }
-            else if (mainmenu1.ToLower()=="Játék folytatás"||mainmenu1.ToLower()=="jatek folytatas")
+            else if (mainmenu1.ToLower() == "Játék folytatás" || mainmenu1.ToLower() == "jatek folytatas")
             {
                 Console.Clear();
                 goto fojatek;
-            }else if (mainmenu1.ToLower()=="menü"||mainmenu1.ToLower()=="menu") 
+            }
+            else if (mainmenu1.ToLower() == "menü" || mainmenu1.ToLower() == "menu")
             {
                 Console.Clear();
                 goto fomenu;
@@ -455,10 +457,10 @@ namespace ConsoleApp1
                 Console.Clear();
                 goto mainMenu;
             }
-            
 
-             bolt:
-            
+
+        bolt:
+
             Console.Clear();
             int konzolSzelesseg4 = Console.WindowWidth;
             int db = 1;
@@ -479,15 +481,15 @@ namespace ConsoleApp1
             Console.WriteLine("A boltban ásványok találhatóak amik a felszerelést fejleszti legyen az kard vagy páncél! ");
             Console.WriteLine("Szeretnél szerencsét próbálni? 10 arany érem egy láda... IGEN | NEM");
             Console.WriteLine($"Pénztárcád: {jatekosPenztarca}");
-            
+
             //Bolt láda nyitás | Véletszám | vszam
-            
+
             string boltDontes3 = Console.ReadLine();
-            if(boltDontes3.ToLower()=="igen")
+            if (boltDontes3.ToLower() == "igen")
             {
                 Console.WriteLine("Milyen ásványt szeretnél nyitni? KARD | PÁNCÉL");
                 string boltDontes4 = Console.ReadLine();
-                if(boltDontes4.ToLower()=="kard")
+                if (boltDontes4.ToLower() == "kard")
                 {
 
                     Console.WriteLine("A kard fejlesztéshez szükséges ásványok nevei:");
@@ -499,7 +501,7 @@ namespace ConsoleApp1
                     Console.WriteLine();
                     Console.WriteLine("Biztosan nyitni szeretnél egy ládát ? IGEN | NEM");
                     string boltDontes5 = Console.ReadLine();
-                    if (boltDontes5.ToLower()=="igen"&& jatekosPenztarca >=10)
+                    if (boltDontes5.ToLower() == "igen" && jatekosPenztarca >= 10)
                     {
                         jatekosPenztarca = jatekosPenztarca - 10;
                         int generaltszam = 0;
@@ -514,86 +516,229 @@ namespace ConsoleApp1
                         if (generaltszam <= 22)
                         {
                             // 1. Tűzfény Kristály – 20% (0-20): 5 sebzés
-                            Console.WriteLine(boltKardAsvany[0]);
-                            jatekosKardSebzes[1] = 0.05;
-                            jatekosKardSebzes[0] = 5;
+                            Console.WriteLine("");
+                            Console.WriteLine("1. Tűzfény Kristály – 20% (0-20): +5 sebzés | +0.05 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.05;
+                                jatekosKardSebzes[0] = 5;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
+
                         }
                         else if (generaltszam <= 37)
                         {
                             // 2. Kék Árnyék Kő – 15% (21-35): 10 sebzés
-                            Console.WriteLine(boltKardAsvany[1]);
-                            jatekosKardSebzes[1] = 0.10;
-                            jatekosKardSebzes[0] = 10;
+                            Console.WriteLine("");
+                            Console.WriteLine("2. Kék Árnyék Kő – 15% (21-35): 10 sebzés |0.1 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.1;
+                                jatekosKardSebzes[0] = 10;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
+
                         }
                         else if (generaltszam <= 50)
                         {
                             // 3. Mosszöld Obszidián – 13% (36-48): 15 sebzés
-                            Console.WriteLine(boltKardAsvany[2]);
-                            jatekosKardSebzes[1] = 0.15;
-                            jatekosKardSebzes[0] = 15;
+                            Console.WriteLine("");
+                            Console.WriteLine("3. Mosszöld Obszidián – 13% (36-48): 15 sebzés |0.15 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.15;
+                                jatekosKardSebzes[0] = 15;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else if (generaltszam <= 62)
                         {
                             // 4. Ezüst Holdkő – 12% (49-60): 20 sebzés
-                            Console.WriteLine(boltKardAsvany[3]);
-                            jatekosKardSebzes[1] = 0.20;
-                            jatekosKardSebzes[0] = 20;
+                            Console.WriteLine("");
+                            Console.WriteLine("4. Ezüst Holdkő – 12% (49-60): 20 sebzés | 0.2 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.2;
+                                jatekosKardSebzes[0] = 20;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else if (generaltszam <= 70)
                         {
                             // 5. Lángoló Zafír – 8% (61-68): 30 sebzés
-                            Console.WriteLine(boltKardAsvany[4]);
-                            jatekosKardSebzes[1] = 0.30;
-                            jatekosKardSebzes[0] = 30;
+                            Console.WriteLine("");
+                            Console.WriteLine("5. Lángoló Zafír – 8% (61-68): 30 sebzés | 0.3 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.3;
+                                jatekosKardSebzes[0] = 30;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else if (generaltszam <= 77)
                         {
                             // 6. Pókfonál Kő – 7% (69-75): 35 sebzés
-                            Console.WriteLine(boltKardAsvany[5]);
-                            jatekosKardSebzes[1] = 0.35;
-                            jatekosKardSebzes[0] = 35;
+                            Console.WriteLine("");
+                            Console.WriteLine("6. Pókfonál Kő – 7% (69-75): 35 sebzés | 0.35 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.35;
+                                jatekosKardSebzes[0] = 35;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else if (generaltszam <= 83)
                         {
                             // 7. Éjfél Tűz Kő – 6% (76-81): 40 sebzés
-                            Console.WriteLine(boltKardAsvany[6]);
-                            jatekosKardSebzes[1] = 0.40;
-                            jatekosKardSebzes[0] = 40;
+                            Console.WriteLine("");
+                            Console.WriteLine("7. Éjfél Tűz Kő – 6% (76-81): +40 sebzés | +0.4% kritikus");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.4;
+                                jatekosKardSebzes[0] = 40;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else if (generaltszam <= 91)
                         {
                             // 8. Fagyott Lúdtoll Kristály – 8% (82-89): 50 sebzés
-                            Console.WriteLine(boltKardAsvany[7]);
-                            jatekosKardSebzes[1] = 0.50;
-                            jatekosKardSebzes[0] = 50;
+                            Console.WriteLine("");
+                            Console.WriteLine("8. Fagyott Lúdtoll Kristály – 8% (82-89): 50 sebzés | 0.5 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.5;
+                                jatekosKardSebzes[0] = 50;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else if (generaltszam <= 97)
                         {
                             // 9. Vihar Lángja – 6% (90-95): 60 sebzés
-                            Console.WriteLine(boltKardAsvany[8]);
-                            jatekosKardSebzes[1] = 0.60;
-                            jatekosKardSebzes[0] = 60;
+                            Console.WriteLine("");
+                            Console.WriteLine("9. Vihar Lángja – 6% (90-95): 60 sebzés | 0.6 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.6;
+                                jatekosKardSebzes[0] = 60;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
                         else
                         {
-                            // 10. Ősi Csillagfény – 4% (96-100): 80 sebzés
-                            Console.WriteLine(boltKardAsvany[9]);
-                            jatekosKardSebzes[1] = 0.80;
-                            jatekosKardSebzes[0] = 80;
+                            Console.WriteLine("");
+                            Console.WriteLine("Ősi Csillagfény – 4% (96-100): 80 sebzés | 0.8 kritikus sebzés");
+                            Console.WriteLine("");
+                            Console.WriteLine("Biztosan meg szertnéd tartani? IGEN | NEM");
+                            string boltValasz1 = Console.ReadLine();
+                            if (boltValasz1.ToLower() == "igen")
+                            {
+                                jatekosKardSebzes[1] = 0.8;
+                                jatekosKardSebzes[0] = 80;
+                                Console.Clear();
+                                goto bolt;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                goto bolt;
+                            }
                         }
 
 
 
 
-                    }else {
+                    }
+                    else
+                    {
                         goto bolt;
                     }
-            }
+                }
             }
             Console.WriteLine("Meg szeretnéd tekinteni a bolt tartalmát? IGEN | NEM");
             string boltDontes = Console.ReadLine();
 
-            if(boltDontes.ToLower()=="igen")
+            if (boltDontes.ToLower() == "igen")
             {
                 Console.WriteLine("A kard fejlesztéshez szükséges ásványok nevei:");
                 foreach (var item in boltKardAsvany)
@@ -631,7 +776,7 @@ namespace ConsoleApp1
             Console.WriteLine("Vissza szeretnél lépni a tábortűzhöz? IGEN | NEM");
             string boltDontes2 = Console.ReadLine();
 
-             if (boltDontes2.ToLower() == "igen")
+            if (boltDontes2.ToLower() == "igen")
             {
                 Console.Clear();
                 goto mainMenu;
@@ -642,25 +787,25 @@ namespace ConsoleApp1
                 goto bolt;
             }
 
-          
 
-            
-            
+
+
+
 
             goto fojatek;
 
 
-          fojatek:
+        fojatek:
 
 
-          vege:
+        vege:
 
 
 
             Console.Clear();
 
 
-                
+
             // felirat kozepre Viszlát.... 
 
             Console.WriteLine("A játék vége.");
